@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Estato : Find your dream </title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload banner
+  -->
+  <link rel="preload" href="wp13430388-new-york-city-sunset-wallpapers.png" as="image">
+
+</head>
+
+<body id="top" >
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="#" class="logo">
+        <img src="Screenshot 2024-09-14 170554.png" width="160" height="50" alt="3ab3az logo">
+      </a>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="Screenshot 2024-09-14 170554.png" width="190" height="50" alt="Gym logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href= "about.html" class="navbar-link">About</a>
+          </li>
+
+     
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main  >
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+      <section class="section hero">
+        <div class="container">
+      
+          <h2 class="h1 hero-title">
+            Your Dream Home Awaits! 
+            <strong>Find Affordable Apartments Across the USA.</strong>
+          </h2>
+          <p>
+            Simply enter your budget, and we’ll help you discover the perfect home that fits your needs.
+          </p>
+          
+      
+          <!-- Button to show input field -->
+          <button class="btn btn-primary" id="budgetButton">
+            <span>Enter your budget in USD$</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <div class="file-input-container">
+            <input type="file" id="csvFileInput" accept=".csv" class="file-input">
+            <label for="csvFileInput" class="file-input-label">
+              <span>Upload CSV</span>
+              <ion-icon name="cloud-upload-outline" aria-hidden="true"></ion-icon>
+            </label>
+          </div>
+
+      
+    <!-- Hidden input box for budget and dynamically populated state dropdown -->
+    <div id="budgetInputDiv" class="input-container">
+      <input type="text" id="budgetInput" class="input-field" placeholder="Enter your budget">
+
+      <!-- Dropdown for selecting state -->
+      <select id="stateSelect" class="dropdown">
+        <option value="" disabled selected>Select your state</option>
+        <!-- Options will be dynamically added here -->
+      </select>
+
+      <button class="btn btn-secondary" id="submitBudget">Submit</button>
+    </div>
+
+  </div>
+</section>
+<section id="searchResults" class="search-results">
+  <h2 class="h1">Available Apartments</h2>
+
+  <table id="resultsTable" class="results-table">
+    <thead>
+      <tr>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Price</th>
+    
+      </tr>
+    </thead>
+    <tbody id="resultsList">
+    </tbody>
+  </table>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<a href="#top" class="go-top-btn" data-go-top>
+  <ion-icon name="arrow-up-outline"></ion-icon>
+</a>
+
+
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="Screenshot 2024-09-14 170554.png" width="160" height="50" alt="Footcap logo">
+          </a>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/anass.ahmed.5855" target="_blank" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+         
+
+          
+
+            <li>
+              <a href="https://www.linkedin.com/in/anass-ahmed-abd-alazim-79aa16257" target="_blank" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title" id="contact">Contact Us</p>
+            </li>
+
+            <li>
+              <a href="tel:+20 107 061 3126" class="footer-link">
+                <ion-icon name="call"></ion-icon>
+
+                <span class="footer-link-text">+20 107 061 3126</span>
+              </a>
+            </li>
+     
+
+            <li>
+              <a href="mailto:anassabdalazim@gmail.com" class="footer-link">
+                <ion-icon name="mail"></ion-icon>
+                <span class="footer-link-text">anassabdalazim@gmail.com</span>
+              </a>
+            </li>
+            
+
+          </ul>
+
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="index.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
